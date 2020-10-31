@@ -1,3 +1,4 @@
+import { ApiService } from './../../@core/services/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharactersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+    this.api.getCharacters(false).subscribe((data)=>console.log(data));
   }
 
 }
