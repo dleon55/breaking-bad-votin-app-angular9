@@ -1,8 +1,14 @@
+import { VotesComponent } from './@pages/votes/votes.component';
+import { CharactersComponent } from './@pages/characters/characters.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'characters',component:CharactersComponent},
+  {path:'votes',component:VotesComponent},
+  {path:'**', pathMatch:'full', redirectTo: 'characters'},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
