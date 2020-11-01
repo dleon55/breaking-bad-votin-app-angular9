@@ -7,7 +7,7 @@ import { map } from "rxjs/operators";
 })
 export class ApiService {
   constructor(private apollo: Apollo) {}
-  //lista de personajes
+  // Lista de los personajes de Breaking Bad
   getCharacters(skip: boolean = true) {
     return this.apollo
       .watchQuery({
@@ -20,7 +20,7 @@ export class ApiService {
       .valueChanges.pipe(
         map((result: any) => {
           console.log(result.data);
-          result.data.characters;
+          return result.data.characters;
         })
       );
   }
