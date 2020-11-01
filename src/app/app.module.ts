@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CharactersComponent } from './@pages/characters/characters.component';
 import { VotesComponent } from './@pages/votes/votes.component';
 import { CardComponent } from './@core/components/card/card.component';
+import { TruncatePipe } from './@core/pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
     VotesComponent,
-    CardComponent
+    CardComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
