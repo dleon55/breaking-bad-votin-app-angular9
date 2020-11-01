@@ -1,7 +1,6 @@
-import { Character } from './../../@core/components/interfaces/character.interface';
+import { Character } from "./../../@core/components/interfaces/character.interface";
 import { ApiService } from "./../../@core/services/api.service";
 import { Component, OnInit } from "@angular/core";
-
 
 @Component({
   selector: "app-characters",
@@ -9,20 +8,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./characters.component.scss"],
 })
 export class CharactersComponent implements OnInit {
-
   loading: boolean;
   character: Character[] = [];
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.loading=true;
+    this.loading = true;
     this.api.getCharacters(false).subscribe((data) => {
-      console.log('data',data);
-      {
-        this.character = data;
-        this.loading=false;
-      }
-
+      this.character = data;
+      this.loading = false;
     });
   }
 }

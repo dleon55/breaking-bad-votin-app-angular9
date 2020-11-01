@@ -9,6 +9,8 @@ import { CharactersComponent } from './@pages/characters/characters.component';
 import { VotesComponent } from './@pages/votes/votes.component';
 import { CardComponent } from './@core/components/card/card.component';
 import { TruncatePipe } from './@core/pipes/truncate.pipe';
+import { LoadingComponent } from './@core/components/loading/loading.component';
+import { NavbarComponent } from './@core/components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TruncatePipe } from './@core/pipes/truncate.pipe';
     CharactersComponent,
     VotesComponent,
     CardComponent,
-    TruncatePipe
+    TruncatePipe,
+    LoadingComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
