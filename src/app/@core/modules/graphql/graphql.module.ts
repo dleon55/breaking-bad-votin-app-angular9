@@ -13,12 +13,12 @@ export class GraphqlModule {
   constructor(apollo: Apollo, httpClient: HttpClient) {
     //Configurar url principal con el link
     const httpLink = new HttpLink(httpClient).create({
-      uri: "http://localhost:5012/graphql",
+      uri: "https://dleon-votaciones-graphql.herokuapp.com/graphql",
     });
 
     //Configurar ws con el link
     const subscriptionLink = new WebSocketLink({
-      uri: "ws://localhost:5012/graphql",
+      uri: "wss://dleon-votaciones-graphql.herokuapp.com/graphql",
       options: {
         reconnect: true,
       },
